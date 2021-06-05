@@ -1,0 +1,10 @@
+README.md
+bytehook.py
+setup.cfg
+setup.py
+bytehook.egg-info/PKG-INFO
+bytehook.egg-info/SOURCES.txt
+bytehook.egg-info/dependency_links.txt
+bytehook.egg-info/namespace_packages.txt
+bytehook.egg-info/not-zip-safe
+bytehook.egg-info/top_level.txt

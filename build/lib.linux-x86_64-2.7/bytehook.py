@@ -1,5 +1,5 @@
 from __future__ import print_function
-import types 
+import new
 import dis
 import struct
 
