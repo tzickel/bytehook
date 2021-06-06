@@ -10,16 +10,6 @@ __version__ = "0.0.1"
 # TODO reloading this clears all the vars... maybe make this object oriented ?
 # TODO currently cannot remove the hookpoint completely
 
-
-def s(short):
-    # opcode arguments are always unsigned short
-    return struct.pack('H', short)
-
-
-def o(s):
-    return chr(dis.opmap[s])
-
-
 def createbytecode(*inp):
     ret = bytes()
     for item in inp:
@@ -144,7 +134,7 @@ def fixlines(co_lnotab, insert_addr, insert_len):
     for byte_incr, line_incr in zip(byte_increments, line_increments):
         addr += byte_incr
         lineno += line_incr
-        if addr >= insert_addr:
+        if addr > insert_addr:
             byte_incr += insert_len
         new_lnotab += bytes({byte_incr}) + bytes({line_incr})
     return new_lnotab
