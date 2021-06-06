@@ -14,9 +14,9 @@ class TestBytehook(unittest.TestCase):
         def inject_element(locals_, globals_):
             locals_['alist'].append(1)
 
-        bytehook.hook(list_empty_function, 1, inject_element, True)
-        # import pdb
-        # pdb.set_trace()
+        bytehook.hook(list_empty_function, 2, inject_element, True)
+        import pdb
+        pdb.set_trace()
         self.assertEqual(list_empty_function(), True)
 
 

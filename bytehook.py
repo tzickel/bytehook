@@ -213,7 +213,6 @@ def hook(func, lineno=None, insert_func=runpdb, with_state=False):
     # TODO is this correct ?
     newstacksize = code.co_stacksize + 4 if with_state else 2
     newfunc = types.CodeType(code.co_argcount, code.co_kwonlyargcount, code.co_nlocals, newstacksize, code.co_flags, newcode, newconsts, newnames, code.co_varnames, code.co_filename, code.co_name, code.co_firstlineno, newlnotab, code.co_freevars, code.co_cellvars)
-    pdb.set_trace()
     # TODO make this thread safe (index returning number)
     hookpointcounter += 1
     if func.__code__ in mapping:
